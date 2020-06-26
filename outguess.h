@@ -31,6 +31,12 @@
 #ifndef _OUTGUESS_H
 #define _OUTGUESS_H
 
+#ifdef WIN32
+#include <winsock2.h>
+#define boolean _boolean_
+#define INT32 _INT32_
+#endif
+
 #include "arc.h"
 
 #define BITSHIFT	0	/* which bit in the byte the data is in */

@@ -28,6 +28,7 @@
 #endif
 
 #include "md5.h"
+#include <string.h>
 
 /* Little-endian byte-swapping routines.  Note that these do not
    depend on the size of datatypes such as uint32, nor do they require
@@ -167,7 +168,7 @@ MD5Final(digest, ctx)
 	putu32(ctx->buf[1], digest + 4);
 	putu32(ctx->buf[2], digest + 8);
 	putu32(ctx->buf[3], digest + 12);
-	memset(ctx, 0, sizeof(ctx));	/* In case it's sensitive */
+	memset(ctx, 0, sizeof(*ctx));	/* In case it's sensitive */
 }
 
 #ifndef ASM_MD5

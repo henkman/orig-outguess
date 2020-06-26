@@ -41,6 +41,10 @@
 #ifndef _ARC_H
 #define _ARC_H
 
+#ifdef WIN32
+#include <winsock2.h>
+#endif
+
 struct arc4_stream {
 	u_int8_t i;
 	u_int8_t j;
